@@ -11,8 +11,6 @@ import java.util.Optional;
 public interface PeopleRepository extends JpaRepository<People, Long> {
 
     Optional<People> findByNomeAndSobrenome(String nome, String Sobrenome);
-
-    @Query(value = "SELECT * FROM usuario WHERE nome LIKE ? ORDER BY nome, sobrenome", nativeQuery = true)
     Optional<People> findByNomeOrderByNome(String nome);
 }
 
